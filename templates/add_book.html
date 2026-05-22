@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block title %}Add Book | Smart Library{% endblock %}
+
+{% block content %}
+<section class="form-layout">
+    <article class="panel form-copy">
+        <div>
+            <span class="eyebrow">Create a new entry</span>
+            <h1 class="title" style="font-size: clamp(1.8rem, 4vw, 2.9rem);">Add a book in a few seconds.</h1>
+            <p class="subtitle">
+                Use this form to keep your library up to date. The inputs are intentionally simple so new users can complete the task quickly without confusion.
+            </p>
+        </div>
+
+        <div class="form-list">
+            <div class="form-list-item">
+                <span class="form-list-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 5v14"></path>
+                        <path d="M5 12h14"></path>
+                    </svg>
+                </span>
+                <div>
+                    <strong>Simple fields</strong>
+                    <p class="helper-text">Only the book title and author are required to create a record.</p>
+                </div>
+            </div>
+
+            <div class="form-list-item">
+                <span class="form-list-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 6 9 17l-5-5"></path>
+                    </svg>
+                </span>
+                <div>
+                    <strong>Clear completion flow</strong>
+                    <p class="helper-text">After saving, the app takes users directly back to the books list.</p>
+                </div>
+            </div>
+
+            <div class="form-list-item">
+                <span class="form-list-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                        <path d="M7 8h10"></path>
+                        <path d="M7 12h7"></path>
+                    </svg>
+                </span>
+                <div>
+                    <strong>Readable on any device</strong>
+                    <p class="helper-text">The form panel adjusts cleanly for mobile, tablet, and desktop layouts.</p>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <article class="panel form-panel">
+        <div class="section-head">
+            <div>
+                <h2 class="form-title">Book Details</h2>
+                <p class="section-copy">Fill in the information below to add a new title to your library.</p>
+            </div>
+        </div>
+
+        <form method="POST" class="form">
+            <div class="input-group">
+                <label for="title" class="input-label">Book Title</label>
+                <div class="input-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                        <path d="M6.5 17A2.5 2.5 0 0 0 4 19.5V5a2 2 0 0 1 2-2h14v14"></path>
+                    </svg>
+                    <input id="title" class="input" type="text" name="title" placeholder="Enter book title" required>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="author" class="input-label">Author Name</label>
+                <div class="input-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"></path>
+                        <path d="M6 20a6 6 0 0 1 12 0"></path>
+                    </svg>
+                    <input id="author" class="input" type="text" name="author" placeholder="Enter author name" required>
+                </div>
+            </div>
+
+            <p class="helper-text">Both fields are required so the library list stays clean and consistent.</p>
+
+            <div class="form-actions">
+                <button type="submit" class="button button-primary">Save Book</button>
+                <a href="/books" class="button button-secondary">Cancel</a>
+            </div>
+        </form>
+    </article>
+</section>
+{% endblock %}

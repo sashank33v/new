@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block title %}Smart Library{% endblock %}
+{% block nav_home %}active{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div>
+        <span class="eyebrow">Organized and beginner-friendly</span>
+        <h1 class="title">Manage your library with a clean, simple workflow.</h1>
+        <p class="subtitle">
+            Track books, add new titles, and keep your collection easy to browse. The interface is designed to feel modern without becoming complicated for everyday users.
+        </p>
+
+        <div class="hero-actions">
+            <a href="/books" class="button button-primary">Browse Books</a>
+            <a href="/add" class="button button-secondary">Add a New Book</a>
+        </div>
+    </div>
+
+    <aside class="hero-card">
+        <div class="hero-card-header">
+            <div>
+                <p class="muted">Library overview</p>
+                <h3>Simple tools, clear results</h3>
+            </div>
+            <span class="hero-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 17A2.5 2.5 0 0 0 4 19.5V5a2 2 0 0 1 2-2h14v14"></path>
+                </svg>
+            </span>
+        </div>
+
+        <p>
+            Everything important stays visible at a glance so users can move through the app without second-guessing where to click next.
+        </p>
+        <ul>
+            <li>Quick access to your book collection</li>
+            <li>Easy form flow for new entries</li>
+            <li>Readable layout on mobile and desktop</li>
+        </ul>
+    </aside>
+</section>
+
+<section class="stats-grid">
+    <article class="stat-card">
+        <span class="stat-label">Books in library</span>
+        <strong class="stat-value">{{ total_books }}</strong>
+        <p class="helper-text">A live count of all titles currently stored in the system.</p>
+    </article>
+
+    <article class="stat-card">
+        <span class="stat-label">Available now</span>
+        <strong class="stat-value">{{ available_books }}</strong>
+        <p class="helper-text">Books marked as available and ready to be borrowed.</p>
+    </article>
+
+    <article class="stat-card">
+        <span class="stat-label">Primary actions</span>
+        <strong class="stat-value">2</strong>
+        <p class="helper-text">Browse your library or add a new book in one click.</p>
+    </article>
+</section>
+
+<section class="panel">
+    <div class="section-head">
+        <div>
+            <h2 class="section-title">
+                <span class="section-title-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 20V10"></path>
+                        <path d="M18 20V4"></path>
+                        <path d="M6 20v-4"></path>
+                    </svg>
+                </span>
+                Why this interface works
+            </h2>
+            <p class="section-copy">The layout stays minimal, but it still gives users enough guidance to complete tasks confidently.</p>
+        </div>
+    </div>
+
+    <div class="feature-grid">
+        <article class="card feature-card">
+            <span class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                    <path d="M7 8h10"></path>
+                    <path d="M7 12h7"></path>
+                </svg>
+            </span>
+            <h3>Clear structure</h3>
+            <p>Headings, subtitles, and card sections make each area easy to understand at a glance.</p>
+        </article>
+
+        <article class="card feature-card">
+            <span class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3v18"></path>
+                    <path d="M3 12h18"></path>
+                </svg>
+            </span>
+            <h3>Simple actions</h3>
+            <p>Primary buttons stand out without clutter, helping users move between pages with less friction.</p>
+        </article>
+
+        <article class="card feature-card">
+            <span class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 5h18"></path>
+                    <path d="M6 12h12"></path>
+                    <path d="M10 19h4"></path>
+                </svg>
+            </span>
+            <h3>Responsive design</h3>
+            <p>The content stacks cleanly across phones, tablets, and desktop screens without losing readability.</p>
+        </article>
+    </div>
+</section>
+{% endblock %}

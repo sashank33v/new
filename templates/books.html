@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Books | Smart Library{% endblock %}
+{% block nav_books %}active{% endblock %}
+
+{% block content %}
+<section class="panel">
+    <div class="section-head">
+        <div>
+            <h1 class="section-title">
+                <span class="section-title-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                        <path d="M6.5 17A2.5 2.5 0 0 0 4 19.5V5a2 2 0 0 1 2-2h14v14"></path>
+                    </svg>
+                </span>
+                Your Books
+            </h1>
+            <p class="section-copy">Browse the library collection in a cleaner, easier-to-scan card layout.</p>
+        </div>
+
+        <a href="/add" class="button button-primary">Add Book</a>
+    </div>
+
+    {% if books %}
+    <div class="books-grid">
+        {% for book in books %}
+        <article class="card book-card">
+            <div class="book-head">
+                <div>
+                    <h2 class="book-title">{{ book.title }}</h2>
+                    <p class="book-meta">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"></path>
+                            <path d="M6 20a6 6 0 0 1 12 0"></path>
+                        </svg>
+                        {{ book._author }}
+                    </p>
+                </div>
+                <span class="book-badge">Available</span>
+            </div>
+
+            <p class="helper-text">Stored in your library and ready to be managed from this collection view.</p>
+        </article>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="card empty-state">
+        <span class="empty-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                <path d="M6.5 17A2.5 2.5 0 0 0 4 19.5V5a2 2 0 0 1 2-2h14v14"></path>
+                <path d="M9 9h6"></path>
+            </svg>
+        </span>
+        <h3>No books added yet</h3>
+        <p>Start building your collection by adding your first book. It will appear here once saved.</p>
+        <a href="/add" class="button button-primary">Add Your First Book</a>
+    </div>
+    {% endif %}
+</section>
+{% endblock %}
